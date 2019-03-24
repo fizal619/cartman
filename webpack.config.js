@@ -7,9 +7,10 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.(js|jsx)$/,
+				test: /(\.js|\.jsx)$/,
 				loader: 'babel-loader',
 				include: [path.resolve(__dirname, 'src')],
+				exclude:  [path.resolve(__dirname, 'node_modules')],
 				query: {
 					presets: ['@babel/react', '@babel/preset-env'],
 					plugins: ['@babel/proposal-class-properties']
@@ -31,6 +32,9 @@ module.exports = {
 			}
 		]
 	},
+	resolve: {
+    extensions: ['.js', '.jsx']
+  },
 
 	output: {
 		chunkFilename: '[name].js',
