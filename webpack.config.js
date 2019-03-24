@@ -7,31 +7,19 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				include: [path.resolve(__dirname, 'src')],
+				test: /\.(js|jsx)$/,
 				loader: 'babel-loader',
-
-				options: {
-					plugins: ['syntax-dynamic-import'],
-
-					presets: [
-						[
-							'@babel/preset-env',
-							{
-								modules: false
-							}
-						]
-					]
-				},
-
-				test: /\.js(x)$/
+				include: [path.resolve(__dirname, 'src')],
+				query: {
+					presets: ['@babel/react', '@babel/preset-env'],
+					plugins: ['@babel/proposal-class-properties']
+				}
 			},
 			{
 				test: /\.css$/,
-
 				use: [
 					{
 						loader: 'style-loader',
-
 						options: {
 							sourceMap: true
 						}
@@ -45,8 +33,8 @@ module.exports = {
 	},
 
 	output: {
-		chunkFilename: '[name].[chunkhash].js',
-		filename: '[name].[chunkhash].js'
+		chunkFilename: '[name].js',
+		filename: '[name].js'
 	},
 
 	mode: 'development',
