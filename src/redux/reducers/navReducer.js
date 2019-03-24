@@ -1,5 +1,5 @@
 const initialState = {
-  currentPage: 'home'
+  currentPage: 'anime'
 }
 
 export default function navReducer(state = initialState, action) {

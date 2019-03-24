@@ -10,7 +10,7 @@ module.exports = {
 				test: /(\.js|\.jsx)$/,
 				loader: 'babel-loader',
 				include: [path.resolve(__dirname, 'src')],
-				exclude:  [path.resolve(__dirname, 'node_modules')],
+				exclude:  [path.resolve(__dirname, 'node_modules'), path.resolve(__dirname, 'src/lib')],
 				query: {
 					presets: ['@babel/react', '@babel/preset-env'],
 					plugins: ['@babel/proposal-class-properties']
@@ -33,7 +33,7 @@ module.exports = {
 		]
 	},
 	resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.json']
   },
 
 	output: {

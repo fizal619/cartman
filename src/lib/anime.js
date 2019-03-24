@@ -1,6 +1,6 @@
-import puppeteer from 'puppeteer';
+const puppeteer = require('puppeteer');
 
-export default async (url, episode) => {
+const streamLink = async (url, episode) => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
@@ -33,3 +33,4 @@ export default async (url, episode) => {
   return animeLink || 'error';
 }
 
+module.exports = streamLink;
