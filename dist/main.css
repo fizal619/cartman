@@ -1,0 +1,11 @@
+.anime-card {
+  display: inline-block;
+  text-align: center;
+  padding: 20px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.anime-card:hover {
+  background-color: aliceblue;
+}

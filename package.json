@@ -7,6 +7,7 @@
     "start": "npx concurrently -k --names 'ELECTRON,WEBPACK' npm:electron npm:webpack-dev",
     "electron": "npx electron .",
     "webpack-dev": "npx webpack --watch",
+    "build": "npx electron-packager . --overwrite --prune=true --asar --arch=x64",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -19,15 +20,16 @@
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-es2015": "^7.0.0-beta.53",
     "@babel/preset-react": "^7.0.0-beta.40",
+    "axios": "^0.18.0",
     "babel-loader": "^8.0.0-beta.0",
     "babel-plugin-lodash": "^3.3.2",
     "babel-plugin-react-transform": "^3.0.0",
     "concurrently": "^4.1.0",
     "css-loader": "^2.1.1",
     "electron": "^4.1.1",
+    "electron-packager": "^13.1.1",
     "electron-rebuild": "^1.8.4",
     "electron-reload": "^1.4.0",
-    "puppeteer": "^1.13.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-redux": "^6.0.1",
@@ -36,5 +38,8 @@
     "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "puppeteer": "^1.13.0"
   }
 }

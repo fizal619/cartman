@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import HomePage from './pages/HomePage';
 import AnimePage from './pages/AnimePage';
 import YoutubePage from './pages/YoutubePage';
+import AnimeInfo from './pages/AnimeInfo';
 import Nav from './sections/Nav';
 
 
@@ -18,7 +19,8 @@ class App extends React.Component {
   pages = {
     home: <HomePage/>,
     anime: <AnimePage/>,
-    youtube: <YoutubePage/>
+    youtube: <YoutubePage/>,
+    info: <AnimeInfo/>
   }
 
   render() {

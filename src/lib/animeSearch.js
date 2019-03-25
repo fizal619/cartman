@@ -23,7 +23,8 @@ const search = async (term) => {
       results.push({
         name: item.children[0].alt,
         img: item.children[0].src,
-        url: item.href
+        url: item.href,
+        episodes: item.querySelector('.ep') ? parseInt(item.querySelector('.ep').textContent.match(/\d+/)[0]) : 0
       });
     });
     return results;
